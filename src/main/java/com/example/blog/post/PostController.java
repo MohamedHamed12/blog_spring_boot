@@ -24,6 +24,13 @@ public class PostController {
 
     @GetMapping()
     public List<Post> getAllPosts() {
+        if (postRepository.findAll().isEmpty()) {
+            // create some posts
+            postRepository.saveAll(List.of(
+                    new Post(1, "My first post", "This is my first post"),
+                    new Post(2, "My second post", "This is my second post")
+            ));
+        }
         return postRepository.findAll();
     }
     
@@ -37,9 +44,7 @@ public class PostController {
 
     @PostMapping()
     public Post createPost(@RequestBody Post post) {
-        System.out.println("********************************************************************************************************");
-        System.out.println(post);
-        return postRepository.save(post);
+         return postRepository.save(post);
     }
     // update post
     @PutMapping("/{id}")

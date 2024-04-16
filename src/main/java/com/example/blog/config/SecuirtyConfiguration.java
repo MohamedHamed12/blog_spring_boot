@@ -21,7 +21,7 @@ import lombok.RequiredArgsConstructor;
 @EnableMethodSecurity
 public class SecuirtyConfiguration {
     private static final String [] WHITELIST = {
-            "/user/**",
+            "/auth/**",
             "/posts/**"
     };
       private final JwtAuthenticationFilter jwtAuthFilter;
