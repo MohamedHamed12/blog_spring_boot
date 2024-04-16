@@ -1,6 +1,6 @@
 
 
-package com.example.blog.models;
+package com.example.blog.post;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
